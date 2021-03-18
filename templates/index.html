@@ -2,14 +2,17 @@
 <html>
     <head>
       <title>Misson to Mars</title>
-      <link rel="stylesheet" href="styles.css">
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        
+    </style>
+    
     </head>
-        <body>
-            <div class="jumbotron jumbotron-fluid" align=center>
-                <h1 class="display-4">Mission to Mars</h1>
+        <body style="background-color: rgb(26, 25, 25); color:white; font-family:'Courier New', Courier, monospace;">
+                <div class="jumbotron jumbotron-fluid" align=center style="background-color: rgb(100, 28, 11);">
+                    <h1 class="display-4" ><strong>Mission to Mars</strong></h1>
                     <button>
-                        <a class="btn btn-lg" href='/scrape' role="buttom">Update Scrape</a>
+                        <a class="btn btn-outline btn-lg" href='/scrape' role="buttom"><strong>Update Scrape</strong></a>
                     </button>
             </div>
             
@@ -19,8 +22,8 @@
             <h1> Featured Image</h1>
             <img src='{{data_from_flask["image_url"]}}'/>
 
-           <sidebar> {{data_from_flask['table_html'] | safe}} </sidebar>
-             <h1> Hemispheres of Mars</h1>
+           <table class="table table-dark table-striped" bgcolor=> {{data_from_flask['table_html'] | safe}} </table>
+             <h1 align=center> Hemispheres of Mars</h1>
              <h3>{{data_from_flask["hemisphere_images"][0]["Title"]}}</h3> 
             <img src='{{data_from_flask["hemisphere_images"][0]["Image URL"]}}'/>
             <h3>{{data_from_flask["hemisphere_images"][1]["Title"]}}</h3> 

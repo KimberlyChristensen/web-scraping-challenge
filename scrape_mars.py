@@ -65,7 +65,7 @@ def scrape():
     #Use the pandas method to convert a df to html string
     #Parse out only specific table data required
     tables_df=tables[2]
-    table_html=tables_df.to_html(index=False)
+    table_html=tables_df.to_html(index=False, header=None)
 
     """
     # Mars Hemispheres
