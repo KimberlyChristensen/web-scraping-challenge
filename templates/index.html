@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Misson to Mars</title>
+      <link rel="stylesheet" href="styles.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+        <body>
+            <div class="jumbotron jumbotron-fluid" align=center>
+                <h1 class="display-4">Mission to Mars</h1>
+                    <button>
+                        <a class="btn btn-lg" href='/scrape' role="buttom">Update Scrape</a>
+                    </button>
+            </div>
+            
+            <h1>Latest News from Mars</h1>
+            <h3>{{data_from_flask['news_t']}}</h3>
+            <p>{{data_from_flask['news_p']}}</p>
+            <h1> Featured Image</h1>
+            <img src='{{data_from_flask["image_url"]}}'/>
+
+           <sidebar> {{data_from_flask['table_html'] | safe}} </sidebar>
+             <h1> Hemispheres of Mars</h1>
+             <h3>{{data_from_flask["hemisphere_images"][0]["Title"]}}</h3> 
+            <img src='{{data_from_flask["hemisphere_images"][0]["Image URL"]}}'/>
+            <h3>{{data_from_flask["hemisphere_images"][1]["Title"]}}</h3> 
+            <img src='{{data_from_flask["hemisphere_images"][1]["Image URL"]}}'/>
+            <h3>{{data_from_flask["hemisphere_images"][2]["Title"]}}</h3> 
+            <img src='{{data_from_flask["hemisphere_images"][2]["Image URL"]}}'/>
+            <h3>{{data_from_flask["hemisphere_images"][3]["Title"]}}</h3> 
+            <img src='{{data_from_flask["hemisphere_images"][3]["Image URL"]}}'/>
+
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+            
+
+
+        </body>
+      
+</html>

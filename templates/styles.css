@@ -1,0 +1,56 @@
+
+.margin-top-80 {
+  margin-top: 80px;
+}
+
+btn {
+    color: rgb(99, 70, 72) !important ;
+    background-color: rgb(99, 70, 72) !important ;
+  }
+
+.jumbotron {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    display: flex;
+
+}
+
+.table {
+  background-color: burgundy;
+  border-color:  #5bc2c2;
+}
+
+body {
+  background: linear-gradient( rgb(62, 93, 151), darkgray);
+}
+
+h1 {
+  font-size: 80px;
+  font-style: bold
+  font-family: 'Candara', Helvetica, sans-serif;
+  color: white;
+}
+
+
+
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+
+@media (max-width: 480px) {
+  .navbar li {
+    padding: 10px;
+  }
+
+  .navbar ul {
+    visibility: hidden;
+  }
+
+  #nav-select {
+    visibility: visible;
+  }
+}
