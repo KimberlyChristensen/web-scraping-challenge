@@ -3,35 +3,81 @@
     <head>
       <title>Misson to Mars</title>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <style>
-        
-    </style>
-    
+   
     </head>
         <body style="background-color: rgb(26, 25, 25); color:white; font-family:'Courier New', Courier, monospace;">
                 <div class="jumbotron jumbotron-fluid" align=center style="background-color: rgb(100, 28, 11);">
                     <h1 class="display-4" ><strong>Mission to Mars</strong></h1>
                     <button>
-                        <a class="btn btn-outline btn-lg" href='/scrape' role="buttom"><strong>Update Scrape</strong></a>
+                        <a class="btn btn-outline btn-lg" href='/scrape' role="buttom"><strong>Update Information</strong>
+                          <br>(New Scrape)</a>
                     </button>
             </div>
-            
-            <h1>Latest News from Mars</h1>
-            <h3>{{data_from_flask['news_t']}}</h3>
-            <p>{{data_from_flask['news_p']}}</p>
-            <h1> Featured Image</h1>
-            <img src='{{data_from_flask["image_url"]}}'/>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-lg-12">
+          
+                  <h1> <strong><u>This Just In:</strong></u></h1>
+                  <h2><strong>{{data_from_flask['news_t']}}</strong></h2>
+                  <h3>{{data_from_flask['news_p']}}</h3>
+                  <br>
+                  <br>
+                </div>
+              </div>
+            </div>
 
-           <table class="table table-dark table-striped" bgcolor=> {{data_from_flask['table_html'] | safe}} </table>
-             <h1 align=center> Hemispheres of Mars</h1>
-             <h3>{{data_from_flask["hemisphere_images"][0]["Title"]}}</h3> 
-            <img src='{{data_from_flask["hemisphere_images"][0]["Image URL"]}}'/>
-            <h3>{{data_from_flask["hemisphere_images"][1]["Title"]}}</h3> 
-            <img src='{{data_from_flask["hemisphere_images"][1]["Image URL"]}}'/>
-            <h3>{{data_from_flask["hemisphere_images"][2]["Title"]}}</h3> 
-            <img src='{{data_from_flask["hemisphere_images"][2]["Image URL"]}}'/>
-            <h3>{{data_from_flask["hemisphere_images"][3]["Title"]}}</h3> 
-            <img src='{{data_from_flask["hemisphere_images"][3]["Image URL"]}}'/>
+            <div class="container-fluid" align=center>
+              <div class="row">
+                <div class="col-lg-8">
+                  <h1> <strong>Featured Image</strong></h1>
+                  <img style="max-height: 780px" src='{{data_from_flask["image_url"]}}'/>
+                </div>
+                <div class="col-lg-4 d-flex justify-content-left">
+                  <figure>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  
+                    <h1 align=left> Mars Statistics </h1>
+                      {{data_from_flask['table_html'] | safe}} 
+                </figure>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="container-fluid">
+             <br>
+             <br>
+              <h1 align=center> <strong>Hemispheres of Mars</strong></h1>
+             <br>
+             <br>
+             <div class="row">
+              <div class="col-sm-6" align=center>
+                <h3> {{data_from_flask["hemisphere_images"][0]["Title"]}}</h3> 
+                  <img class=".img-fluid" style="max-width: 75%; height:auto;" src='{{data_from_flask["hemisphere_images"][0]["Image URL"]}}'/>
+                </div>
+              <div class="col-sm-6" align=center>
+                <h3>{{data_from_flask["hemisphere_images"][1]["Title"]}}</h3> 
+                  <img class=".img-fluid" style="max-width: 75%; height:auto;"src='{{data_from_flask["hemisphere_images"][1]["Image URL"]}}'/>
+                </div>
+              </div>
+              <br>
+              <br>
+            <div class="row">
+              <div class="col-sm-6" align=center>
+                <h3>{{data_from_flask["hemisphere_images"][2]["Title"]}}</h3> 
+                  <img class=".img-fluid" style="max-width: 75%; height:auto;" src='{{data_from_flask["hemisphere_images"][2]["Image URL"]}}'/>
+                </div>
+                <div class="col-sm-6" align=center>
+                <h3>{{data_from_flask["hemisphere_images"][3]["Title"]}}</h3> 
+                  <img class=".img-fluid" style="max-width: 75%; height:auto;" src='{{data_from_flask["hemisphere_images"][3]["Image URL"]}}'/>
+                <br>
+                <br>
+                </div>
+              </div>
+            </div>
 
             <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
