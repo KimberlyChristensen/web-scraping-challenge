@@ -87,21 +87,24 @@ def scrape():
     results=soup.find_all('div', class_='item')
 
     for result in results:
-        
+        try:
     #Save the Hemisphere title
-        title = result.h3.text
+            title = result.h3.text
     #Click on the URL and obtain image url for full-resolution image:
-        url=result.find('a')['href']
-        full_url='https://astrogeology.usgs.gov'+url
-        browser.visit(full_url)
-        img_url=browser.find_by_text('Sample')['href']
+            url=result.find('a')['href']
+            full_url='https://astrogeology.usgs.gov'+url
+            browser.visit(full_url)
+            img_url=browser.find_by_text('Sample')['href']
+        except:
+            img_url=''
+            title='Image Not Found'
     # Append the dictionary with the image url string and the hemisphere title to a list. 
     # This list will contain one dictionary for each hemisphere.
         hemisphere_image_dict={'Title': title,
-                            'Image URL': img_url}
+                                'Image URL': img_url}
         hemisphere_image_urls.append(hemisphere_image_dict)
 
-    browser.quit()
+        browser.quit()
 
     #mongo connection string 
     mongo_conn='mongodb://localhost:27017'
